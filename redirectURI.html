@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Please find the Auth Code Below</h2>
+<body style="background-image:url('file:///C:/Users/JenaP2/Desktop/Open ID App/background_white.PNG');">
+
+<p id="demo"></p>
+
+<script>
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+function getUrlParam(parameter, defaultvalue){
+    var urlparameter = defaultvalue;
+    if(window.location.href.indexOf(parameter) > -1){
+        urlparameter = getUrlVars()[parameter];
+        }
+    return urlparameter;
+}
+
+var mytext = getUrlParam('code','Empty');
+
+document.getElementById("demo").innerHTML =
+"Auth Code to be used for /Token call:<br>" + mytext;
+
+</script>
+
+<p><a href="file:///C:/Users/JenaP2/Desktop/Generate%20APIX%20Access%20Token.html" target="_blank">Generate Access Token</a></p>
+
+</body>
+</html>
